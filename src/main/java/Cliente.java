@@ -1,24 +1,24 @@
 public class Cliente {
 
     IPrato prato;
-    PratoAdapter persistencia;
+    PratoAdapter comanda;
 
     public Cliente() {
         prato = new PratoPeso();
-        persistencia = new PratoAdapter(prato);
+        comanda = new PratoAdapter(prato);
     }
 
     public void setPrato(float peso) {
         prato.setPrato(peso);
-        persistencia.salvarPrato();
+        comanda.salvarPrato();
     }
 
     public float getPrato() {
-        return persistencia.recuperarPrato();
+        return comanda.recuperarPrato();
     }
 
     public float getValor() {
-        return persistencia.getValor();
+        return comanda.getValor();
     }
 
 }
